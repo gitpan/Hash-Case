@@ -3,7 +3,7 @@
 # Test upper cased hash
 
 use strict;
-use Test;
+use Test::More;
 
 use lib qw/. t/;
 
@@ -14,22 +14,22 @@ use Hash::Case::Upper;
 my %h;
 
 tie %h, 'Hash::Case::Upper';
-ok(keys %h == 0);
+cmp_ok(keys %h, '==',  0);
 
 $h{ABC} = 3;
-ok($h{ABC} == 3);
-ok($h{abc} == 3);
-ok($h{AbC} == 3);
-ok(keys %h == 1);
+cmp_ok($h{ABC}, '==',  3);
+cmp_ok($h{abc}, '==',  3);
+cmp_ok($h{AbC}, '==',  3);
+cmp_ok(keys %h, '==',  1);
 
 my @h = keys %h;
-ok(@h==1);
-ok($h[0] eq 'ABC');
+cmp_ok(@h, '==',  1);
+is($h[0], 'ABC');
 
 $h{dEf} = 4;
-ok($h{def} == 4);
-ok($h{dEf} == 4);
-ok(keys %h == 2);
+cmp_ok($h{def}, '==',  4);
+cmp_ok($h{dEf}, '==',  4);
+cmp_ok(keys %h, '==',  2);
 
 my (@k, @v);
 while(my ($k, $v) = each %h)
@@ -37,36 +37,36 @@ while(my ($k, $v) = each %h)
     push @v, $v;
 }
 
-ok(@k==2);
+cmp_ok(@k, '==',  2);
 @k = sort @k;
-ok($k[0] eq 'ABC');
-ok($k[1] eq 'DEF');
+is($k[0], 'ABC');
+is($k[1], 'DEF');
 
-ok(@v==2);
+cmp_ok(@v, '==',  2);
 @v = sort {$a <=> $b} @v;
-ok($v[0] == 3);
-ok($v[1] == 4);
+cmp_ok($v[0], '==',  3);
+cmp_ok($v[1], '==',  4);
 
 ok(exists $h{ABC});
-ok(delete $h{ABC} == 3);
-ok(keys %h == 1);
+cmp_ok(delete $h{ABC}, '==',  3);
+cmp_ok(keys %h, '==',  1);
 
 %h = ();
-ok(keys %h == 0);
+cmp_ok(keys %h, '==',  0);
 ok(tied %h);
 
 my %a;
 tie %a, 'Hash::Case::Upper', [ AbC => 3, dEf => 4 ];
 ok(tied %a);
-ok(keys %a==2);
+cmp_ok(keys %a, '==',  2);
 ok(defined $a{abc});
-ok($a{ABC} == 3);
-ok($a{DeF} == 4);
+cmp_ok($a{ABC}, '==',  3);
+cmp_ok($a{DeF}, '==',  4);
 
 my %b;
 tie %b, 'Hash::Case::Upper', { AbC => 3, dEf => 4 };
 ok(tied %b);
-ok(keys %b==2);
+cmp_ok(keys %b, '==',  2);
 ok(defined $b{abc});
-ok($b{ABC} == 3);
-ok($b{DeF} == 4);
+cmp_ok($b{ABC}, '==',  3);
+cmp_ok($b{DeF}, '==',  4);
