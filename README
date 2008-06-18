@@ -1,5 +1,5 @@
-=== README for Hash-Case version 1.004
-=   Generated on Fri Jun  8 14:46:12 2007 by OODoc 1.00
+=== README for Hash-Case version 1.005
+=   Generated on Wed Jun 18 09:03:09 2008 by OODoc 1.05
 
 There are various ways to install this module:
 
@@ -9,15 +9,16 @@ There are various ways to install this module:
  (2) if you use Windows, have a look at http://ppm.activestate.com/
 
  (3) if you have downloaded this module manually (as root/administrator)
-       gzip -d Hash-Case-1.004.tar.gz
-       tar -xf Hash-Case-1.004.tar
-       cd Hash-Case-1.004
+       gzip -d Hash-Case-1.005.tar.gz
+       tar -xf Hash-Case-1.005.tar
+       cd Hash-Case-1.005
        perl Makefile.PL
        make          # optional
        make test     # optional
        make install
 
-For usage, see the included manual-pages.
+For usage, see the included manual-pages or
+    http://search.cpan.org/dist/Hash-Case-1.005/
 
 Please report problems to
     http://rt.cpan.org/Dist/Display.html?Queue=Hash-Case

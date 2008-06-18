@@ -91,7 +91,7 @@ differ per implementation: read the manual page for the package you actually
 use.  The VALUES is a reference to an array containing key-value pairs,
 or a reference to a hash: they fill the initial hash.
 
-I<Example:> 
+example: 
 
  my %x;
  tie %x, 'Hash::Case::Lower';
@@ -109,12 +109,12 @@ I<Example:>
 
 =head1 SEE ALSO
 
-This module is part of Hash-Case distribution version 1.004,
-built on June 08, 2007. Website: F<http://perl.overmeer.net/hash-case/>
+This module is part of Hash-Case distribution version 1.005,
+built on June 18, 2008. Website: F<http://perl.overmeer.net/hash-case/>
 
 =head1 LICENSE
 
-Copyrights 2002-2003,-2007 by Mark Overmeer. For other contributors see ChangeLog.
+Copyrights 2002-2003,2007-2008 by Mark Overmeer. For other contributors see ChangeLog.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
