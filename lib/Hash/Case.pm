@@ -5,7 +5,7 @@
 
 package Hash::Case;
 use vars '$VERSION';
-$VERSION = '1.005';
+$VERSION = '1.006';
 
 
 use Tie::Hash;

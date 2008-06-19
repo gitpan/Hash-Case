@@ -4,7 +4,7 @@
 # Pod stripped from pm file by OODoc 1.05.
 package Hash::Case::Preserve;
 use vars '$VERSION';
-$VERSION = '1.005';
+$VERSION = '1.006';
 
 use base 'Hash::Case';
 

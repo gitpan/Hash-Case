@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Hash-Case
-version:             1.005
+version:             1.006
 abstract:            Play trics with hash keys
 license:             perl
 author:              

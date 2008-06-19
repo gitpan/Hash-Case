@@ -5,7 +5,7 @@
 
 package Hash::Case::Upper;
 use vars '$VERSION';
-$VERSION = '1.005';
+$VERSION = '1.006';
 
 use base 'Hash::Case';
 
