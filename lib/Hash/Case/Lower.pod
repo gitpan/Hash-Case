@@ -17,16 +17,19 @@ Hash::Case::Lower - hash with enforced lower cased keys
 
 =head1 DESCRIPTION
 
-Hash::Case::Lower extends Hash::Case, which lets you play various trics
-with hash keys.  See L<Hash::Case> for the other implementations.
+Hash::Case::Lower extends L<Hash::Case|Hash::Case>, which lets you play various
+trics with hash keys. In this implementation, the fake hash is case
+insensitive and the keys stored in lower-case.
 
 =head1 METHODS
+
+=head2 Constructors
 
 $obj-E<gt>B<addHashData>(HASH)
 
 =over 4
 
-See L<Hash::Case/"METHODS">
+See L<Hash::Case/"Constructors">
 
 =back
 
@@ -34,7 +37,7 @@ $obj-E<gt>B<addPairs>(PAIRS)
 
 =over 4
 
-See L<Hash::Case/"METHODS">
+See L<Hash::Case/"Constructors">
 
 =back
 
@@ -42,7 +45,7 @@ $obj-E<gt>B<setHash>(HASH)
 
 =over 4
 
-See L<Hash::Case/"METHODS">
+See L<Hash::Case/"Constructors">
 
 =back
 
@@ -50,20 +53,20 @@ B<tie>(HASH, 'Hash::Case::Lower', [VALUES,] OPTIONS)
 
 =over 4
 
-Define HASH to have only lower cased keys.  The hash is
-initialized with the VALUES, specified as ref-array or
-ref-hash.  Currently, there are no OPTIONS defined.
+Define HASH to have only lower cased keys.  The hash is initialized with
+the VALUES, specified as ref-array (with key value pairs) or ref-hash.
+Currently, there are no OPTIONS defined.
 
 =back
 
 =head1 SEE ALSO
 
-This module is part of Hash-Case distribution version 1.006,
-built on June 19, 2008. Website: F<http://perl.overmeer.net/hash-case/>
+This module is part of Hash-Case distribution version 1.01,
+built on February 15, 2010. Website: F<http://perl.overmeer.net/hash-case/>
 
 =head1 LICENSE
 
-Copyrights 2002-2003,2007-2008 by Mark Overmeer. For other contributors see ChangeLog.
+Copyrights 2002-2003,2007-2010 by Mark Overmeer. For other contributors see ChangeLog.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

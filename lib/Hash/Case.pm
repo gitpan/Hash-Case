@@ -1,21 +1,19 @@
-# Copyrights 2002-2003,2007-2008 by Mark Overmeer.
+# Copyrights 2002-2003,2007-2010 by Mark Overmeer.
 #  For other contributors see ChangeLog.
 # See the manual pages for details on the licensing terms.
-# Pod stripped from pm file by OODoc 1.05.
-
-package Hash::Case;
-use vars '$VERSION';
-$VERSION = '1.006';
-
-
-use Tie::Hash;
-use base 'Tie::StdHash';
-
+# Pod stripped from pm file by OODoc 1.06.
 use warnings;
 use strict;
 
-use Carp;
-use Tie::Hash;
+package Hash::Case;
+use vars '$VERSION';
+$VERSION = '1.01';
+
+
+use Tie::Hash;  # contains Tie::StdHash
+use base 'Tie::StdHash';
+
+use Log::Report 'hash-case';
 
 
 sub TIEHASH(@)
@@ -34,7 +32,7 @@ sub native_init($)
        if(!$add)               { ; }
     elsif(ref $add eq 'ARRAY') { $self->addPairs(@$add) }
     elsif(ref $add eq 'HASH')  { $self->addHashData($add)  }
-    else { croak "Cannot initialize the native hash this way." }
+    else { error "cannot initialize the native hash this way" }
 
     $self;
 }
@@ -48,7 +46,7 @@ sub wrapper_init($)
        if(!$add)               { ; }
     elsif(ref $add eq 'ARRAY') { $self->addPairs(@$add) }
     elsif(ref $add eq 'HASH')  { $self->setHash($add)  }
-    else { croak "Cannot initialize a wrapping hash this way." }
+    else { error "cannot initialize a wrapping hash this way" }
 
     $self;
 }

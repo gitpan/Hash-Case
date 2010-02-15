@@ -1,15 +1,17 @@
-# Copyrights 2002-2003,2007-2008 by Mark Overmeer.
+# Copyrights 2002-2003,2007-2010 by Mark Overmeer.
 #  For other contributors see ChangeLog.
 # See the manual pages for details on the licensing terms.
-# Pod stripped from pm file by OODoc 1.05.
+# Pod stripped from pm file by OODoc 1.06.
+use strict;
+use warnings;
+
 package Hash::Case::Lower;
 use vars '$VERSION';
-$VERSION = '1.006';
+$VERSION = '1.01';
 
 use base 'Hash::Case';
 
-use strict;
-use Carp;
+use Log::Report 'hash-case';
 
 
 sub init($)
@@ -17,7 +19,7 @@ sub init($)
 
     $self->SUPER::native_init($args);
 
-    croak "No options possible for ".__PACKAGE__
+    error __x"no options possible for {pkg}", pkg => __PACKAGE__
         if keys %$args;
 
     $self;
