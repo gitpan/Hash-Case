@@ -1,13 +1,13 @@
-# Copyrights 2002-2003,2007-2010 by Mark Overmeer.
+# Copyrights 2002-2003,2007-2012 by Mark Overmeer.
 #  For other contributors see ChangeLog.
 # See the manual pages for details on the licensing terms.
-# Pod stripped from pm file by OODoc 1.06.
+# Pod stripped from pm file by OODoc 2.00.
 use strict;
 use warnings;
 
 package Hash::Case::Lower;
 use vars '$VERSION';
-$VERSION = '1.01';
+$VERSION = '1.02';
 
 use base 'Hash::Case';
 
